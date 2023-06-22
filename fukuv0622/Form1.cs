@@ -12,10 +12,15 @@ namespace fukuv0622
         {
 
             int[] data = new int[10];
-            for (int i = 0; i < data.Length; i++)
+            label1.Text = "";
+            int sum = 0;
+            for (int i= 0; i< 10; i++) 
+            {
                 data[i] = rand.Next(101);
-            label1.Text = data[0] + ", " + data[1] + ", " + data[2] + ", " + data[3] + ", " + data[4] + ", " + data[5] + ", " + data[6] + ", " + data[7] + ", " + data[8] + ", " + data[9];
-            MessageBox.Show(((data[0] + data[1] + data[2] + data[3] + data[4] + data[5] + data[6] + data[7] + data[8] + data[9]) / 10).ToString());
+                label1.Text += $"{data[i]},";
+                sum += data[i];
+            }
+            MessageBox.Show($"{sum / 10}");
         }
     }
 }
